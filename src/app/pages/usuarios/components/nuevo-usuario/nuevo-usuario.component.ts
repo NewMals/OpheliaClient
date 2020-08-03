@@ -1,3 +1,4 @@
+import { Respuesta } from './../../../../models/respuesta.model';
 import { environment } from 'src/environments/environment';
 import { obtenerUsuariosPorIdentificacion, obtenerRoles, crearOModificarUsuario } from './../../../../../constantes/controllers';
 import { Component, Output, EventEmitter } from '@angular/core';
@@ -52,7 +53,8 @@ export class NuevoUsuarioComponent {
   }
 
   CrearOModificarUsuario(): void {
-    this.apiservice.post(crearOModificarUsuario, this.usuario).subscribe(() => {
+    this.apiservice.post(crearOModificarUsuario, this.usuario).subscribe((respuesta: Respuesta) => {
+      alert(respuesta.mensaje, 'Ejecución exitosa');
       this.Regresar();
     }, (error: any) => {
       console.log(error);
