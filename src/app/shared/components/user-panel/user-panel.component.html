@@ -1,9 +1,9 @@
 <div class="user-panel">
     <div class="user-info">
         <div class="image-container">
-            <div class="user-image"></div>
+            <img  class="user-image" src="assets/images/Avatar.jpg"/>
         </div>
-        <div class="user-name">{{usuario.Nombres}} {{usuario.Apellidos}}</div>
+        <div class="user-name">{{usuario.nombres}}</div>
     </div>
     <dx-context-menu
         *ngIf="menuMode === 'context'"

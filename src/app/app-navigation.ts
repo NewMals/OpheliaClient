@@ -12,16 +12,7 @@ export const navigation = [
   {
     text: 'Usuarios',
     icon: 'group',
-    items: [
-      {
-        text: 'Clientes',
-        path: '/display-data'
-      },
-      {
-        text: 'Proveedores',
-        path: ''
-      }
-    ]
+    path: '/usuarios'
   },
   {
     text: 'Facturacion',
@@ -29,19 +20,14 @@ export const navigation = [
     items: [
       {
         text: 'Productos',
-        path: '',
+        path: '/productos',
         icon: 'product'
       },
       {
-        text: 'Ventas',
-        path: '',
+        text: 'Ventas/Compras',
+        path: '/ventasYcompras',
         icon: 'unselectall'
-      },
-      {
-        text: 'Compras',
-        path: '',
-        icon: 'unselectall'
-      },
+      }
     ]
   }
 ];

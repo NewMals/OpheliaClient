@@ -22,18 +22,21 @@ export class HeaderComponent {
   @Input()
   title: string;
 
-  userMenuItems = [{
-    text: 'Profile',
-    icon: 'user'
-  }, {
-    text: 'Logout',
-    icon: 'runner',
-    onClick: () => {
-      this.authService.logOut();
-    }
-  }];
+  userMenuItems: any;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+    this.Inicializar();
+  }
+
+  Inicializar(): void {
+    this.userMenuItems = [{
+      text: 'Cerrar sesión',
+      icon: 'runner',
+      onClick: () => {
+        this.authService.logOut();
+      }
+    }];
+  }
 
   toggleMenu = () => {
     this.menuToggle.emit();

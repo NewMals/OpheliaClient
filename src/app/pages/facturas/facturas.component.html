@@ -1,0 +1,71 @@
+<h2>Facturas</h2>
+
+  <div class="content-block row justify-content-start">
+    <div class="col-sm-6">
+      <dx-button
+        stylingMode="contained"
+        text="Ventas"
+        type="success"
+        (onClick)="GetVentas()">
+      </dx-button>
+      <dx-button
+        stylingMode="contained"
+        text="Compras"
+        type="danger"
+        (onClick)="GetCompras()">
+      </dx-button>
+    </div>
+  </div>
+
+  <dx-data-grid class="dx-card wide-card"
+      [dataSource]="facturas"
+      [showBorders]="false"
+      [focusedRowEnabled]="true"
+      [focusedRowIndex]="0"
+      [columnAutoWidth]="true"
+      [columnHidingEnabled]="true">
+
+      <dxo-paging [pageSize]="5"></dxo-paging>
+      <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
+      <dxo-filter-row [visible]="true"></dxo-filter-row>
+
+      <dxi-column
+        dataField="id"
+        caption="Factura"
+        [hidingPriority]="1">
+      </dxi-column>
+      <dxi-column
+        dataField="producto.descripcion"
+        caption="Producto"
+        [hidingPriority]="2">
+      </dxi-column>
+      <dxi-column
+        dataField="usuario.nombres"
+        caption="Nombre"
+        [hidingPriority]="3">
+      </dxi-column>
+      <dxi-column
+        dataField="fecha"
+        caption="Fecha del movimiento"
+        dataType="date"
+        [hidingPriority]="6">
+      </dxi-column>
+      <dxi-column
+        dataField="valorUnitario"
+        caption="Valor Unitario"
+        format="currency"
+        [hidingPriority]="7">
+      </dxi-column>
+      <dxi-column
+        dataField="cantidad"
+        caption="Cantidad"
+        [hidingPriority]="8">
+      </dxi-column>
+      <dxi-column
+        dataField="valorTotal"
+        caption="Valor Total"
+        format="currency"
+        [hidingPriority]="9">
+      </dxi-column>
+  </dx-data-grid>
+

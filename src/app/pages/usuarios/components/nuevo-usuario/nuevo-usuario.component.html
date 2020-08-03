@@ -1,0 +1,88 @@
+<div class="dx-card responsive-paddings">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label>Identificacion</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="usuario.identificacion"
+          (blur)="ConsultarUsuario();"
+          [disabled]="!habilitar"
+        />
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group required">
+        <label>Nombres</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="usuario.nombres"
+          name="nombre"
+          required
+          [disabled]="!habilitar"
+        />
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="form-group required">
+        <label>Apellidos</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="usuario.apellidos"
+          name="nombre"
+          required
+          [disabled]="!habilitar"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-4">
+        <label>Telefono</label>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="usuario.telefono"
+          name="telefono"
+        />
+      </div>
+      <div class="col-sm-4 dx-field-value">
+        <label>Rol</label>
+        <dx-select-box
+            [dataSource]="roles"
+            [(value)]="usuario.rol"
+            displayExpr="descripcion"
+            valueExpr="id"
+            [readOnly]="!habilitar"
+            (onValueChanged)="RolSeleccionado($event)"
+        ></dx-select-box>
+      </div>
+      <div class="col-sm-4 dx-field-value">
+        <label>Fecha de nacimiento</label>
+        <dx-date-box
+          [(value)]="usuario.fechaNacimiento"
+          type="date"
+          [disabled]="!habilitar"
+        ></dx-date-box>
+      </div>
+    </div>
+  </div>
+    <dx-button
+      class="btn-danger"
+      stylingMode="contained"
+      text="Regresar"
+      (onClick)="Regresar()">
+    </dx-button>
+    <dx-button
+      class="btn-success float-right"
+      stylingMode="contained"
+      text="Guardar"
+      (onClick)="CrearOModificarUsuario()"
+    >
+    </dx-button>
+</div>
+

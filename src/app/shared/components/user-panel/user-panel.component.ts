@@ -17,11 +17,13 @@ export class UserPanelComponent {
   usuario: Usuario;
 
   constructor() {
-    this.menuItems();
+    this.Inicializar();
   }
 
   Inicializar(): void {
     this.usuario = new Usuario();
+    this.usuario.nombres = 'Michael Andres';
+    this.usuario.apellidos = 'Lozano Sanchez';
   }
 }
 

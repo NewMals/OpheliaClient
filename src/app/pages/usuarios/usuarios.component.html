@@ -1,0 +1,79 @@
+<h2>Usuarios</h2>
+
+<div  #buttons>
+  <div class="content-block row justify-content-start">
+    <div class="col-sm-6">
+      <dx-button
+        stylingMode="contained"
+        text="Clientes"
+        type="success"
+        (onClick)="GetClientes()">
+      </dx-button>
+      <dx-button
+        stylingMode="contained"
+        text="Provedores"
+        type="danger"
+        (onClick)="GetProveedores()">
+      </dx-button>
+    </div>
+    <div class="col-sm-6">
+      <dx-button
+       class="btn-primary nuevo"
+        stylingMode="contained"
+        text="+"
+        (onClick)="NuevoUsuario()">
+      </dx-button>
+    </div>
+  </div>
+</div>
+<div #nuevoUsuario>
+  <app-nuevo-usuario (cerrar)="Regresar()" class="content-block" ></app-nuevo-usuario>
+</div>
+
+<dx-data-grid class="dx-card wide-card"
+    [dataSource]="usuarios"
+    [showBorders]="false"
+    [focusedRowEnabled]="true"
+    [focusedRowIndex]="0"
+    [columnAutoWidth]="true"
+    [columnHidingEnabled]="true">
+
+    <dxi-column
+      dataField="id"
+      [width]="90"
+      [hidingPriority]="1">
+    </dxi-column>
+    <dxi-column
+      dataField="identificacion"
+      caption="Identificacion"
+      [hidingPriority]="2">
+    </dxi-column>
+    <dxi-column
+      dataField="nombres"
+      caption="Nombres"
+      [hidingPriority]="3">
+    </dxi-column>
+    <dxi-column
+      dataField="apellidos"
+      caption="Apellidos"
+      [hidingPriority]="4">
+    </dxi-column>
+    <dxi-column
+      dataField="fechaNacimiento"
+      caption="Fecha de Nacimiento"
+      dataType="date"
+      [hidingPriority]="5">
+    </dxi-column>
+    <dxi-column
+      dataField="fechaRegistro"
+      caption="Fecha de Registro"
+      dataType="date"
+      [hidingPriority]="6">
+    </dxi-column>
+    <dxi-column
+      dataField="telefono"
+      caption="Contacto"
+      [hidingPriority]="7">
+    </dxi-column>
+</dx-data-grid>
+

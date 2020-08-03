@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  rutaApi: 'https://localhost:44332/api/',
+  error: 'Se presento un error al momento de enviar la solicitud, por favor verificar la ejecución de los script en base de datos, que el servicio del API este encendido o validar la respuesta de la peticion'
 };
 
 /*

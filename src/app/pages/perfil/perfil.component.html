@@ -1,10 +1,17 @@
 <h2 class="content-block">Perfil del aspirante</h2>
 
 <div class="content-block dx-card responsive-paddings">
-    <!-- <div class="form-avatar">
-        <img src="https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/{{employee.Picture}}"/>
-    </div> -->
-    <!-- <span>{{employee.Notes}}</span> -->
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="form-avatar">
+          <img src="assets/images/Avatar.jpg"/>
+      </div>
+    </div>
+    <div class="col">
+      <h5>Michael Andres Lozano Sanchez</h5>
+      <p>Ingeniero de sistemas y desarrollador informático, con conocimiento y experiencia en análisis, diseño y desarrollo de aplicaciones multiplataforma. A partir de los requerimientos determinados y la información de contextualización, mediante el uso de tecnologías ágiles como Scrum.</p>
+    </div>
+  </div>
 </div>
 
 <div class="content-block dx-card responsive-paddings">
@@ -12,6 +19,7 @@
         [formData]="perfil"
         labelLocation="top"
         [colCountByScreen]="colCountByScreen"
+        readOnly=true
     >
     </dx-form>
 </div>

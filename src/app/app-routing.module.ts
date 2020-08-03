@@ -4,18 +4,12 @@ import { LoginFormComponent } from './shared/components';
 import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
-import { DisplayDataComponent } from './pages/display-data/display-data.component';
-import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { DxDataGridModule, DxFormModule, DxButtonModule } from 'devextreme-angular';
 
 const routes: Routes = [
   {
-    path: 'display-data',
-    component: DisplayDataComponent,
-    canActivate: [ AuthGuardService ]
-  },
-  {
-    path: 'perfil',
-    component: PerfilComponent,
+    path: 'login-form',
+    component: LoginFormComponent,
     canActivate: [ AuthGuardService ]
   },
   {
@@ -24,8 +18,23 @@ const routes: Routes = [
     canActivate: [ AuthGuardService ]
   },
   {
-    path: 'login-form',
-    component: LoginFormComponent,
+    path: 'perfil',
+    component: PerfilComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'usuarios',
+    loadChildren: () => import('./pages/usuarios/usuarios.module').then(m => m.UsuariosModule),
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'productos',
+    loadChildren: () => import('./pages/productos/productos.module').then(m => m.ProductosModule),
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'ventasYcompras',
+    loadChildren: () => import('./pages/facturas/facturas.module').then(m => m.FacturasModule),
     canActivate: [ AuthGuardService ]
   },
   {
@@ -36,9 +45,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule],
+  imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule, DxButtonModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, PerfilComponent, DisplayDataComponent]
+  declarations: [HomeComponent, PerfilComponent]
 })
 export class AppRoutingModule { }

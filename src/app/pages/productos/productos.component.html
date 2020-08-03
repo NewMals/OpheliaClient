@@ -1,0 +1,26 @@
+<h2>Productos</h2>
+
+  <dx-data-grid class="dx-card wide-card"
+      [dataSource]="productos"
+      [showBorders]="false"
+      [focusedRowEnabled]="true"
+      [focusedRowIndex]="0"
+      [columnAutoWidth]="true"
+      [columnHidingEnabled]="true">
+
+      <dxi-column
+        dataField="id"
+        [hidingPriority]="1">
+      </dxi-column>
+      <dxi-column
+        dataField="codigo"
+        caption="Codigo"
+        [hidingPriority]="2">
+      </dxi-column>
+      <dxi-column
+        dataField="descripcion"
+        caption="Descrpción"
+        [hidingPriority]="3">
+      </dxi-column>
+  </dx-data-grid>
+
